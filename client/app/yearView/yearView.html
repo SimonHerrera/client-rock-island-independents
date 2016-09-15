@@ -1,0 +1,9 @@
+<div>
+  <section>
+    <h1>{{ yearView.welcome }}</h1>
+
+    <h2 ng-repeat='coach in yearView.coaches'> <a href ="{{ coach.url }}"> {{ coach.firstName }} {{ coach.lastName }} </a></h2>
+
+    <h2> <a href ="{{ yearView.coach.url }}"> {{ yearView.coach.firstName }} {{ yearView.coach.lastName }} </a></h2>
+  </section>
+</div>
