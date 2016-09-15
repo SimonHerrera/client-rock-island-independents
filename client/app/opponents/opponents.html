@@ -19,7 +19,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat='opponent in opponents.teamsPlayed'>
+                <tr ng-repeat="opponent in opponents.teamsPlayed | orderBy: 'name'">
                   <td>{{ opponent.name }}</td>
                   <td>{{ opponent.wins }}</td>
                   <td>{{ opponent.losses }}</td>
