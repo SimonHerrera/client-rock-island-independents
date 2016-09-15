@@ -16,10 +16,10 @@ angular.module('riiApp')
 
 
     function addResults() {
-      //opponents-games-result = "W"
       var wins = 0;
       var losses = 0;
       var ties = 0;
+
       for (let i = 0; i < opponents.teamsPlayed.length; i++) {
           console.log("opp", opponents.teamsPlayed[i]);
         for (let j = 0; j < opponents.teamsPlayed[i].games.length; j++) {
@@ -28,19 +28,17 @@ angular.module('riiApp')
             wins ++
           } else if (opponents.teamsPlayed[i].games[j].result === "L") {
             losses ++
-          }else if (opponents.teamsPlayed[i].games[j].result === "T") {
+          } else if (opponents.teamsPlayed[i].games[j].result === "T") {
             ties ++
           }
         }
-        console.log("wins", wins );
+        // Diplay Results and then set back to 0 for next iteration
         opponents.teamsPlayed[i].wins = wins
         wins = 0
         opponents.teamsPlayed[i].losses = losses
         losses = 0
         opponents.teamsPlayed[i].ties = ties
         ties = 0
-
       }
     }
-
   });

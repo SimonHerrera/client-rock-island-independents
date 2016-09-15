@@ -33,11 +33,12 @@ angular.module('riiApp')
       .when('/teamPhotos', {
         templateUrl: 'app/teamPhotos/teamPhotos.html'
       })
-      .when('/yearView', {
+      .when('/yearView/:selectedYear', {
         controller: 'YearViewCtrl',
         controllerAs: 'yearView',
         templateUrl: 'app/yearView/yearView.html'
       })
+
       // .when('/auth', {
       //   controller: 'AuthCtrl',
       //   controllerAs: 'auth',
