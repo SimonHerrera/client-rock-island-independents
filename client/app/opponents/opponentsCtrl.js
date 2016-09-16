@@ -9,7 +9,7 @@ angular.module('riiApp')
     opponents.heading = 'Games 1919 - 1925'
 
     $http.get (apiUrl+'/opponents/').then(res => {
-      console.log("opponent res", res);
+      // console.log("opponent res", res);
       opponents.teamsPlayed = res.data
       addResults()
     });
