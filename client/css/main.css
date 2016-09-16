@@ -10,15 +10,15 @@ body {
 }
 
 /*------- Link and Special Settings ---------*/
-a:link {
-  color: darkgreen;
+a: link {
+  color: lightgray;
 }
-a:visited {
-  color: darkgreen;
+a: visited {
+  color: lightgray;
 }
 a: hover {
   transition: .3s ease;
-  color#fff;
+  color: #fff;
 }
 a: active {
   color: #fff;
@@ -26,11 +26,10 @@ a: active {
 a {
   text-decoration: none;
 }
-ul {
+li {
   list-style-type: none;
   padding-left: 0;
 }
-
 
 .wrapper {
   min-height: 100vh;
@@ -40,12 +39,56 @@ ul {
   background-color: transparent;
 }
 
-.main-footer {
+/*========== Header styles ==========*/
+
+#nav-links {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(200,200,200,.98);
+  display: flex;
+  flex-direction: row;
+  border-bottom: 3px solid #fff;
+  letter-spacing: .2em;
+  z-index: 1000;
+}
+
+
+/*#nav-links nav {
+  width: 90%;
+  margin: auto;
+}*/
+
+#nav-links ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#nav-links a,
+#nav-links a:visited {
+  font-family: "Cabin", sans-serif;
+  color: rgba(8,37,6,.5);;
+  padding: 3px 10px;
+}
+
+#nav-links a:hover {
+  text-shadow: 2px 2px 2px rgba(0,0,0,.2);
+  color: #fff;
+}
+
+#main-footer {
   margin: 0 auto;
   position: fixed;
   bottom: 0;
   text-align: center;
   width: 100%;
-  margin: 0 auto;;
-  background-color: rgba(200,200,200, .9);
+  background-color: rgba(200,200,200,.98);
+}
+
+.left {
+  float: left;
+  width: 33%;
+  text-align: center;
+  border: solid 1px black;
 }

@@ -1,9 +1,37 @@
 <div>
   <section>
-    <h1>{{ yearView.welcome }}</h1>
+    <div>
+      <div class="left"><h3> {{ yearView.year.year }} R.I. Independents</h3></div>
+      <divc class="left"><h3> Record {{ yearView.year.wins }} - {{ yearView.year.losses }} - {{ yearView.year.ties }} </h3></div>
+      <div class="left"><h3> Coach {{ yearView.year.coachId.firstName }} {{ yearView.year.coachId.lastName }} </h3>
+    </div>
+  </section>
 
-<!--     <h2 ng-repeat='coach in yearView.coaches'> <a href ="{{ coach.url }}"> {{ coach.firstName }} {{ coach.lastName }} </a></h2> -->
+  <section>
+    <div>
+      <h3>{{ yearView.year.year }} {{ yearView.heading }}</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Wk</th>
+              <th>Teams</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="game in yearView.thisYearsGames | orderBy: 'date'">
+              <td>{{ game.week }}</td>
+              <td>{{ game.opponentId.name }}</td>
+              <td>{{ game.result }}-{{ game.rockIslandScore }}-{{ game.opponentScore }}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </section>
 
-    <h2>Welcome to  {{ yearView.years.year }} the team was coached by {{ yearView.years.coachId.firstName }} {{ yearView.years.coachId.lastName }} </h2>
+    <section>
+    <div>
+      <h4>Players here</h4>
+    </div>
   </section>
 </div>
