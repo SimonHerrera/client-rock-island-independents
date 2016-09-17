@@ -5,12 +5,12 @@ angular.module('riiApp')
 
     const yearView = this;
     yearView.thisYearsGames = null;
-    // yearView.thisYearsPlayers = null;
+    yearView.playerthisYearsPlayers = [];
 
   //Get Player
 
 
-    yearView.heading = 'Schedule'
+    yearView.heading = 'Season Schedule'
 
     console.log("selectd year", $routeParams.selectedYear);
 
@@ -22,7 +22,8 @@ angular.module('riiApp')
 
     $http.get (`${apiUrl}/years/${$routeParams.selectedYear}/`)
     .then(res => {
-      yearView.year = res.data
+      yearView.year = res.data;
+      console.log(yearView.year);
     }).then(() =>
       $http.get (apiUrl+'/games/').then(res => {
         yearView.allGames = res.data
@@ -41,15 +42,21 @@ angular.module('riiApp')
         // console.log("res", res);
         yearView.allPlayers = res.data
       })
-    )//.then goes here
-    // .then(
-    // () => {
-    //   yearView.thisYearsPlayers = yearview.allPlayers.filter(player => {
-    //     return player ==== yearView.players.seasons
-    //   })
-    // })
+    ).then(
+    () => {
+      yearView.allPlayers.forEach(player => {
+        player.season.forEach(s => {
+          console.log(s, yearView.year.url);
+          if (s === yearView.year.url) {
+            yearView.playerthisYearsPlayers.push(player);
+          }
+        });
+
+        console.log("yearView.playerthisYearsPlayers", yearView.playerthisYearsPlayers)
 
 
+      });
+    })
 
 
   });

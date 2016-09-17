@@ -29,9 +29,25 @@
     </div>
   </section>
 
+  <section class="summary">
+    <div> {{  yearView.year.yearSummary }}
+  </section>
+
     <section>
     <div>
-      <h4>Players here</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Player</th>
+            <th>Position</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="player in yearView.playerthisYearsPlayers | orderBy: 'lastName'">
+            <td>{{ player.firstName }} {{ player.lastName }}</td>
+            <td>{{ player.position }}</td>
+          </tr>
+        </tbody>
     </div>
   </section>
 </div>
