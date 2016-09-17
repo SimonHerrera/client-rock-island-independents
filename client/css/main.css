@@ -92,3 +92,10 @@ li {
   text-align: center;
   border: solid 1px black;
 }
+
+.summary {
+  float: right;
+  width: 60%;
+  text-align: center;
+  border: solid 1px black;
+}

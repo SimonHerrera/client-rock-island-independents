@@ -21,7 +21,7 @@ angular.module('riiApp')
       var ties = 0;
 
       for (let i = 0; i < opponents.teamsPlayed.length; i++) {
-          console.log("opp", opponents.teamsPlayed[i]);
+          // console.log("opp", opponents.teamsPlayed[i]);
         for (let j = 0; j < opponents.teamsPlayed[i].games.length; j++) {
           console.log("game", opponents.teamsPlayed[i].games[j]);
           if (opponents.teamsPlayed[i].games[j].result === "W") {
