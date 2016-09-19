@@ -2,12 +2,23 @@
   box-sizing: border-box;
 }
 
-body {
+/*body {
   margin: 0;
   padding: 0;
   font-size: 2.0em;
   color: black;
+}*/
+
+body {
+  background-color: #f9f9f9;
+  margin: auto;
+  padding: 4px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2em;
+  font-weight: bold;
+  color: #303030;
 }
+
 
 /*------- Link and Special Settings ---------*/
 a: link {
@@ -31,51 +42,47 @@ li {
   padding-left: 0;
 }
 
+/*********** Ng Wrapper ***********/
+
 .wrapper {
   min-height: 100vh;
   width: 100%;
-  padding: 61px 0 0;
   margin: auto;
   background-color: transparent;
 }
 
-/*========== Header styles ==========*/
 
-#nav-links {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(200,200,200,.98);
-  display: flex;
-  flex-direction: row;
-  border-bottom: 3px solid #fff;
-  letter-spacing: .2em;
-  z-index: 1000;
+/*********** Main Links ***********/
+
+div#links > a{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px; /*fits with room*/
+  background: #000;
+  padding: 5px 10px;
+  color: #aaa;
+  margin-right: 2px;
+  margin-bottom: 0px;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.1s linear 0s, color 0.1s linear 0s;
 }
 
-
-/*#nav-links nav {
-  width: 90%;
-  margin: auto;
-}*/
-
-#nav-links ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-#nav-links a,
-#nav-links a:visited {
-  font-family: "Cabin", sans-serif;
-  color: rgba(8,37,6,.5);;
-  padding: 3px 10px;
-}
-
-#nav-links a:hover {
-  text-shadow: 2px 2px 2px rgba(0,0,0,.2);
+div#links > a:hover {
+  background: #0c400c;
   color: #fff;
 }
+
+div#links {
+  margin: 0 auto 0 auto;
+  padding: 5px 0; /*gives room*/
+  width: 100%;
+  min-width: 1050px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+
+/*********** Footer ***********/
 
 #main-footer {
   margin: 0 auto;
@@ -83,19 +90,98 @@ li {
   bottom: 0;
   text-align: center;
   width: 100%;
-  background-color: rgba(200,200,200,.98);
+  /*background-color: rgba(200,200,200,.98);*/
 }
 
-.left {
+
+/*********** Year Views ***********/
+
+/*skip and landing mid looks good*/
+/*.left {
   float: left;
   width: 33%;
   text-align: center;
   border: solid 1px black;
-}
+}*/
 
 .summary {
   float: right;
   width: 60%;
   text-align: center;
   border: solid 1px black;
+}
+
+
+/*********** Landing Page Layout ***********/
+
+div.no-wrap  {
+  clear: both;
+}
+
+/*changes some things and looks good*/
+p.left {
+  font-family: sans-serif;
+  font-size: .7em;
+  font-weight: 750;
+  color: #303030;
+  text-align: left;
+}
+
+div.page-header  {
+  border: 0px solid black;
+  width: 100%;
+  min-width: 1050px;
+  max-width: 1300px;
+  /*background-color: #f9f9f9;*/
+  font-family: "Courier New", Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+  color: #303030;
+  text-align: center;
+  padding: 0px 10px 0px 10px;
+  margin: auto;
+}
+
+div.main-box {
+  width: 93%;
+  min-width: 1050px;
+  max-width: 1300px;
+  margin: auto;
+  /*background-color:  #f9f9f9;*/
+ }
+
+div#main-left-box {
+  font-family: "Courier New", Courier, monospace;
+  border: 0px solid black;
+  width: 19%;
+  float: left;
+  /*background-color: #f9f9f9;*/
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  margin: 5px;
+}
+
+div#main-center-box {
+  font-family: "Courier New", Courier, monospace;
+  border: 0px solid black;
+  font-size: 18px;
+  font-weight: bold;
+  color: #303030;
+  width: 59%;
+  float: left;
+  /*background-color: #f9f9f9;*/
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  margin: 5px;
+}
+
+div#main-right-box {
+  font-family: Georgia, "Century Gothic", sans-serif;
+  border: 0px solid black;
+  width: 19%;
+  float: right;
+  /*background-color: #f9f9f9;*/
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  margin: 5px;
 }
