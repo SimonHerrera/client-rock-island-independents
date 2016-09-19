@@ -12,11 +12,9 @@
               </thead>
               <tbody>
                 <tr ng-repeat='player in players.riiPlayers'>
+                  <!-- <td><a href ="{{ player.url }}">{{ player.firstName }}  {{ player.lastName }}</a><img ng-src="{{ player.image }}"></td> -->
                   <td><a href ="{{ player.url }}">{{ player.firstName }}  {{ player.lastName }}</a></td>
-               <!--    <td>{{ opponent.wins }}</td>
-                  <td>{{ opponents.losses }}</td>
-                  <td>{{ opponents.ties }}</td> -->
-                  <!-- <td><button ng-click="deleteAlbum(album)">Delete</button></td> -->
+
                 </tr>
               </tbody>
             </table>
@@ -25,4 +23,11 @@
 
 
   </section>
-</div>
+<!-- Code that can bring in images</div>
+    <div ng-init="myVar = 'http://localhost:8000/media/player_images/player_XgeBeru.jpg'">
+      <img ng-src="{{myVar}}">
+    </div> -->
+ <!--  <div>
+    <img ng-src="{{ players.riiPlayers.image }}">
+    <img ng-src='http://localhost:8000/media/player_images/player_XgeBeru.jpg'">
+  </div> -->
