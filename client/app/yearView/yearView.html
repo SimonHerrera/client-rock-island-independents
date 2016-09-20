@@ -1,39 +1,45 @@
 <div>
+  <!-- Year View heading info -->
   <section>
-    <div>
-      <div class="left"><h3> {{ yearView.year.year }} R.I. Independents</h3></div>
-      <divc class="left"><h3> Record {{ yearView.year.wins }} - {{ yearView.year.losses }} - {{ yearView.year.ties }} </h3></div>
-      <div class="left"><h3> Coach {{ yearView.year.coachId.firstName }} {{ yearView.year.coachId.lastName }} </h3>
+    <div class="year-box">
+      <div id="year-left-box"><h3> {{ yearView.year.year }} R.I. Independents</h3></div>
+      <div id="year-center-box"><h3> Record {{ yearView.year.wins }} - {{ yearView.year.losses }} - {{ yearView.year.ties }} </h3></div>
+       <div id="year-right-box"><h3> Coach {{ yearView.year.coachId.firstName }} {{ yearView.year.coachId.lastName }} </h3></div>
     </div>
   </section>
 
-  <section>
-    <div>
-      <h3>{{ yearView.year.year }} {{ yearView.heading }}</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Wk</th>
-              <th>Teams</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr ng-repeat="game in yearView.thisYearsGames | orderBy: 'date'">
-              <td>{{ game.week }}</td>
-              <td>{{ game.opponentId.name }}</td>
-              <td>{{ game.result }}-{{ game.rockIslandScore }}-{{ game.opponentScore }}</td>
-            </tr>
-          </tbody>
-        </table>
-    </div>
+  <!-- Table heading and Opponent name and score -->
+    <section id="scheduleYearView">
+      <div>
+        <h3>{{ yearView.year.year }} {{ yearView.heading }}</h3>
+          <table class="cellPad">
+            <thead>
+              <tr>
+                <th>Wk</th>
+                <th>Teams</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="game in yearView.thisYearsGames | orderBy: 'date'">
+                <td>{{ game.week }}</td>
+                <td>{{ game.opponentId.name }}</td>
+                <td><a href ="" ng-click="yearView.selectGame(game)">{{ game.result }}-{{ game.rockIslandScore }}-{{ game.opponentScore }}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </section>
+
+  <!-- Year Summary Section -->
+  <section id="mainYearView">
+    <div ng-show="yearView.yearSummary"> {{  yearView.year.yearSummary }}</div>
+    <div ng-show="yearView.individualGameView"> {{  yearView.gameSummary }}</div>
+    <div ng-show="yearView.individualPlayerView"> {{  yearView.player.playerBio }} <img ng-src="{{ yearView.player.image }}"></div>
   </section>
 
-  <section class="summary">
-    <div> {{  yearView.year.yearSummary }}
-  </section>
-
-    <section>
+  <!-- Player Name and Position -->
+    <section id="playerYearView">
     <div>
       <table>
         <thead>
@@ -43,11 +49,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="player in yearView.playerthisYearsPlayers | orderBy: 'lastName'">
-            <td>{{ player.firstName }} {{ player.lastName }}</td>
+          <tr ng-repeat="player in yearView.thisYearsPlayers | orderBy: 'lastName'">
+            <td><a href ="" ng-click="yearView.selectPlayer(player)">{{ player.firstName }} {{ player.lastName }}</td>
             <td>{{ player.position }}</td>
           </tr>
         </tbody>
     </div>
   </section>
+
 </div>

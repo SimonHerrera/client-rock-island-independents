@@ -10,7 +10,7 @@
 }*/
 
 body {
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /*off white for site*/
   margin: auto;
   padding: 4px;
   font-family: "Courier New", Courier, monospace;
@@ -45,25 +45,48 @@ li {
 /*********** Ng Wrapper ***********/
 
 .wrapper {
+  position: absolute;
+  top: 88px;
   min-height: 100vh;
   width: 100%;
   margin: auto;
-  background-color: transparent;
+
+  height: 100vh;
+/*  background-image: url('../images/PracticeDay.jpg');
+  background-size: cover;
+  background-position: center;*/
 }
 
 
 /*********** Main Links ***********/
 
+.nav-fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #f9f9f9;
+  margin: 0 auto 0 auto;
+  padding: 5px 0;
+  min-width: 1090px;
+  text-align: center;
+  border: 1px solid black;
+  z-index: 1000;
+}
+
+div#links {
+  padding: 5px 0;
+}
+
 div#links > a{
-  font-family: Arial, Helvetica, sans-serif;
+  /*font-family: Arial, Helvetica, sans-serif;*/
   font-size: 20px; /*fits with room*/
   background: #000;
-  padding: 5px 10px;
+  padding: 5px 20px;
   color: #aaa;
   margin-right: 2px;
   margin-bottom: 0px;
   text-decoration: none;
-  border-radius: 2px;
+  border-radius: 4px;
   transition: background 0.1s linear 0s, color 0.1s linear 0s;
 }
 
@@ -72,14 +95,25 @@ div#links > a:hover {
   color: #fff;
 }
 
-div#links {
-  margin: 0 auto 0 auto;
-  padding: 5px 0; /*gives room*/
-  width: 100%;
-  min-width: 1050px;
-  text-align: center;
-  border: 1px solid black;
+a.no_underline:hover {
+  text-decoration: none;
 }
+
+a.black_link:visited {
+  font-family: Georgia, "Century Gothic", sans-serif;
+  color: #303030;
+}
+
+a.black_link:visited {
+   color: #303030;
+}
+
+a.black_text {
+  font-family: Georgia, "Century Gothic", sans-serif;
+  color: #303030;
+  font-size: .8em;
+}
+
 
 
 /*********** Footer ***********/
@@ -96,6 +130,43 @@ div#links {
 
 /*********** Year Views ***********/
 
+div.year-box {
+  width: 100%;
+  min-width: 1050px;
+  max-width: 1300px;
+  margin: auto;
+ }
+
+div#year-left-box {
+  font-family: Georgia, "Century Gothic", sans-serif;
+  border: 1px solid black;
+  width: 30%;
+  float: left;
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  margin: 5px;
+}
+
+div#year-center-box {
+  font-family: Georgia, "Century Gothic", sans-serif;
+  border: 1px solid black;
+  width: 35%;
+  float: left;
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  margin: 5px;
+}
+
+div#year-right-box {
+  font-family: Georgia, "Century Gothic", sans-serif;
+  border: 1px solid black;
+  width: 30%;
+  float: right;
+  padding: 20px 10px 20px 10px;
+  text-align: center;
+  margin: 5px;
+}
+
 /*skip and landing mid looks good*/
 /*.left {
   float: left;
@@ -104,12 +175,67 @@ div#links {
   border: solid 1px black;
 }*/
 
+th {
+  text-align:left;
+  padding-left: 10px;
+  /*border-bottom: 2px solid black;*/
+}
+
+td {
+   padding-left: 10px;
+}
+
+#scheduleYearView {
+  float: left;
+  width: 35%;
+  min-width: 450px;
+  padding-left: 5px;
+  text-align: left;
+  margin: 2px 10px;
+  display: inline;
+  border: 1px solid black;
+}
+
+#mainYearView {
+  float: left;
+  width: 50%;
+  min-width: 650px;
+  text-align: left;
+  margin: 2px 10px;
+  display: inline;
+  border: 1px solid black;
+}
+
+#playerYearView {
+  clear:both;
+  min-width: 450px;
+  float: left;
+  width: 35%;
+  text-align: left;
+  margin: 2px 10px;
+  /*display: inline;*/
+  border: 1px solid black;
+}
+
 .summary {
   float: right;
-  width: 60%;
+  width: 40%;
   text-align: center;
   border: solid 1px black;
 }
+
+
+/*********** Main View on Player List ***********/
+/*#mainPlayerView {
+  float: left;
+  width: 50%;
+  min-width: 650px;
+  text-align: left;
+  margin: 2px 10px;
+  display: inline;
+  border: 1px solid black;
+}*/
+
 
 
 /*********** Landing Page Layout ***********/
@@ -120,10 +246,6 @@ div.no-wrap  {
 
 /*changes some things and looks good*/
 p.left {
-  font-family: sans-serif;
-  font-size: .7em;
-  font-weight: 750;
-  color: #303030;
   text-align: left;
 }
 
@@ -132,8 +254,6 @@ div.page-header  {
   width: 100%;
   min-width: 1050px;
   max-width: 1300px;
-  /*background-color: #f9f9f9;*/
-  font-family: "Courier New", Courier, monospace;
   font-size: 18px;
   font-weight: bold;
   color: #303030;
@@ -143,16 +263,16 @@ div.page-header  {
 }
 
 div.main-box {
-  width: 93%;
+  width: 100%;
   min-width: 1050px;
-  max-width: 1300px;
+  /*max-width: 1300px;*/
   margin: auto;
   /*background-color:  #f9f9f9;*/
  }
 
 div#main-left-box {
-  font-family: "Courier New", Courier, monospace;
-  border: 0px solid black;
+  font-family: Georgia, "Century Gothic", sans-serif;
+  border: 1px solid black;
   width: 19%;
   float: left;
   /*background-color: #f9f9f9;*/
@@ -162,16 +282,16 @@ div#main-left-box {
 }
 
 div#main-center-box {
-  font-family: "Courier New", Courier, monospace;
-  border: 0px solid black;
-  font-size: 18px;
-  font-weight: bold;
-  color: #303030;
+  font-family: Georgia, "Century Gothic", sans-serif;
+  border: 1px solid black;
+  /*font-size: 18px;*/
+  /*font-weight: bold;*/
+  /*color: #303030;*/
   width: 59%;
   float: left;
   /*background-color: #f9f9f9;*/
   padding: 20px 10px 20px 10px;
-  text-align: center;
+  text-align: justify;
   margin: 5px;
 }
 
@@ -185,3 +305,17 @@ div#main-right-box {
   text-align: center;
   margin: 5px;
 }
+
+.black-text {
+ font-family: Georgia, "Century Gothic", sans-serif;
+}
+
+.black-link {
+ font-family: Georgia, "Century Gothic", sans-serif;
+}
+
+/*********** Player Table ***********/
+
+/*table {
+  font-size: 15px;
+}*/

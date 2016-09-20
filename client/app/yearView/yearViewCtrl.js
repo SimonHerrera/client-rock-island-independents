@@ -5,7 +5,10 @@ angular.module('riiApp')
 
     const yearView = this;
     yearView.thisYearsGames = null;
-    yearView.playerthisYearsPlayers = [];
+    yearView.thisYearsPlayers = [];
+    yearView.yearSummary = true;
+    yearView.individualGameView = false
+    yearView.individualPlayerView = false
 
   //Get Player
 
@@ -48,15 +51,29 @@ angular.module('riiApp')
         player.season.forEach(s => {
           console.log(s, yearView.year.url);
           if (s === yearView.year.url) {
-            yearView.playerthisYearsPlayers.push(player);
+            yearView.thisYearsPlayers.push(player);
           }
         });
 
-        console.log("yearView.playerthisYearsPlayers", yearView.playerthisYearsPlayers)
+        console.log("yearView.thisYearsPlayers", yearView.thisYearsPlayers)
 
 
       });
     })
+
+    yearView.selectGame = game => {
+      yearView.yearSummary = false;
+      yearView.individualGameView = true;
+      yearView.individualPlayerView = false;
+      yearView.gameSummary = game.gameSummary
+    }
+
+    yearView.selectPlayer = player => {
+      yearView.yearSummary = false;
+      yearView.individualGameView = false;
+      yearView.individualPlayerView = true;
+      yearView.player = player
+    }
 
 
   });

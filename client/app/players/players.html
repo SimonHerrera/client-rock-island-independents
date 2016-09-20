@@ -2,24 +2,33 @@
   <section>
     <h1>{{ players.welcome }}</h1>
 
-      <div class="col-lg-10 col-md-10 col-sm-10"> <!-- ng-show? -->
+      <div class="col-lg-4 col-md-4 col-sm-4"> <!-- ng-show? -->
         <div>
-            <table class="table table-striped table-hover">
+            <table class="table table-striped table-hover table-condensed table-bordered">
               <thead>
                 <tr>
                   <th>Player Name</th>
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat='player in players.riiPlayers'>
-                  <td><a href ="{{ player.url }}">{{ player.firstName }}  {{ player.lastName }}</a><img ng-src="{{ player.image }}"></td>
+                <tr ng-repeat="player in players.riiPlayers | orderBy: 'lastName'">
+                  <!-- <td><a href ="{{ player.url }}">{{ player.firstName }}  {{ player.lastName }}</a><img ng-src="{{ player.image }}"></td> -->
                   <!-- <td><a href ="{{ player.url }}">{{ player.firstName }}  {{ player.lastName }}</a></td> -->
+                  <td><a href ="" ng-click="players.selectPlayer(player)">{{ player.firstName }}  {{ player.lastName }}</a></td>
 
                 </tr>
               </tbody>
             </table>
         </div>
       </div>
+
+    <!-- Player Bio Section -->
+    <section id="mainPlayerView">
+      <!-- why does this intialView not show anything -->
+      <div ng-show="players.intialView"> {{  players.player.weight }}</div>
+      <div ng-show="players.individualPlayerView"> {{  players.player.playerBio }} <img ng-src="{{ players.player.image }}"></div>
+    </section>
+
   </section>
 </div>
 <!-- Code that can bring in images</div>
