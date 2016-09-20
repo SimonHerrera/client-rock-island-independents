@@ -6,6 +6,7 @@
     <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
     <title>Rock Island Independents - Original NFL Franchise</title>
+
     <link rel="stylesheet" href="css/normalize.css" type="text/css">
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
@@ -14,36 +15,31 @@
   <body ng-app="riiApp"> <!-- should this be here -->
 
     <!-- <header id="nav-links"> -->
-    <header>
-    <div id="links">
-      <a href='/#/'>Home</a>
-      <a href='/#/teamHistory'>Team History</a>
-      <a href='/#/teamPhotos'>Team Photos</a>
-      <a href='/#/players'>Players</a>
-      <a href='/#/opponents'>All Time Opponents</a>
-      <a href='/#/douglasPark'>Douglas Park</a>
-      <a href='/#/rules'>Rules</a>
-    </div>
-    <div id="links">
-      <a href='/#/yearView/1'>1919</a>
-      <a href='/#/yearView/2'>1920</a>
-      <a href='/#/yearView/3'>1921</a>
-      <a href='/#/yearView/4'>1922</a>
-      <a href='/#/yearView/5'>1923</a>
-      <a href='/#/yearView/6'>1924</a>
-      <a href='/#/yearView/7'>1925</a>
-      <a href='/#/about'>About</a>
-      <a href="www.vintageamericanfootball.com">Vintage Football</a>
-    </div>
+    <header class="nav-fixed">
+        <div id="links">
+          <a href='/#/'>Home</a>
+          <a href='/#/teamHistory'>Team History</a>
+          <a href='/#/teamPhotos'>Team Photos</a>
+          <a href='/#/players'>Players</a>
+          <a href='/#/opponents'>All Time Opponents</a>
+          <a href='/#/douglasPark'>Douglas Park</a>
+          <a href='/#/rules'>Rules</a>
+        </div>
+        <div id="links">
+          <a href='/#/yearView/1'>1919</a>
+          <a href='/#/yearView/2'>1920</a>
+          <a href='/#/yearView/3'>1921</a>
+          <a href='/#/yearView/4'>1922</a>
+          <a href='/#/yearView/5'>1923</a>
+          <a href='/#/yearView/6'>1924</a>
+          <a href='/#/yearView/7'>1925</a>
+          <a href='/#/about'>About</a>
+          <a href="www.vintageamericanfootball.com">Vintage Football</a>
+        </div>
     </header>
 
     <article ng-view class="wrapper">
-
-
-    </article> <!-- end wrapper -->
-<!--     <footer id="main-footer">
-      <p>&copy; RockIslandIndependents.com</p>
-    </footer> -->
+    </article>
 
     <!-- Dependency Scripts -->
     <script src="lib/angular/angular.min.js" type="text/javascript"></script>
