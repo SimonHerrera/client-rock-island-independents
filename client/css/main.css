@@ -13,12 +13,16 @@ body {
   background-color: #f9f9f9; /*off white for site*/
   margin: auto;
   padding: 4px;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 2em;
-  font-weight: bold;
+  font-family: Georgia, "Century Gothic", sans-serif;
+  /*font-family: "Courier New", Courier, monospace;*/
+  font-size: 1.4em;
+  /*font-weight: bold;*/
   color: #303030;
 }
 
+.center {
+  text-align: center;
+}
 
 /*------- Link and Special Settings ---------*/
 a: link {
@@ -46,15 +50,16 @@ li {
 
 .wrapper {
   position: absolute;
+  min-width: 1300px;
   top: 88px;
   min-height: 100vh;
   width: 100%;
   margin: auto;
 
   height: 100vh;
-/*  background-image: url('../images/PracticeDay.jpg');
-  background-size: cover;
-  background-position: center;*/
+  background-image: url('../images/bgsite.png');
+  background-size: auto ;
+  background-position: center;
 }
 
 
@@ -64,7 +69,11 @@ li {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #f9f9f9;
+  background-image: url('../images/linksite.png');
+   background-position: center;
+  background-size: auto;
+  /*background: #f9f9f9;*/
+  /*background: transparent;*/
   margin: 0 auto 0 auto;
   padding: 5px 0;
   min-width: 1090px;
@@ -75,6 +84,7 @@ li {
 
 div#links {
   padding: 5px 0;
+  min-width: 1300px;
 }
 
 div#links > a{
@@ -128,42 +138,84 @@ a.black_text {
 }
 
 
-/*********** Year Views ***********/
+/*********** Year Views Heading ***********/
 
-div.year-box {
+div.year-head-box {
   width: 100%;
   min-width: 1050px;
   max-width: 1300px;
   margin: auto;
  }
 
-div#year-left-box {
+div.year-head-left-box {
   font-family: Georgia, "Century Gothic", sans-serif;
-  border: 1px solid black;
+  border: 0px solid black;
   width: 30%;
   float: left;
-  padding: 20px 10px 20px 10px;
+  /*padding: 20px 10px 20px 10px;*/
   text-align: center;
   margin: 5px;
 }
 
-div#year-center-box {
+div.year-head-center-box {
   font-family: Georgia, "Century Gothic", sans-serif;
-  border: 1px solid black;
+  border: 0px solid black;
   width: 35%;
   float: left;
-  padding: 20px 10px 20px 10px;
+  /*padding: 20px 10px 20px 10px;*/
   text-align: center;
   margin: 5px;
 }
 
-div#year-right-box {
+div.year-head-right-box {
   font-family: Georgia, "Century Gothic", sans-serif;
-  border: 1px solid black;
+  border: 0px solid black;
   width: 30%;
   float: right;
-  padding: 20px 10px 20px 10px;
+  /*padding: 20px 10px 20px 10px;*/
   text-align: center;
+  margin: 5px;
+}
+
+/*********** Year Views Main Content ***********/
+
+div.year-box {
+  width: 100%;
+  min-width: 1300px;
+  /*max-width: 1300px;*/
+  margin: auto;
+ }
+
+div.year-left-box {
+  font-family: Georgia, "Century Gothic", sans-serif;
+  min-width: 305px;
+  border: 1px solid black;
+  width: 23%;
+  float: left;
+  padding: 20px 10px;
+  text-align: left;
+  margin: 5px;
+}
+
+div.year-center-box {
+  font-family: Georgia, "Century Gothic", sans-serif;
+  min-width: 650px;
+  border: 1px solid black;
+  width: 50%;
+  float: left;
+  padding: 15px 10px 20px 10px;
+  text-align: left;
+  margin: 5px;
+}
+
+div.year-right-box {
+  font-family: Georgia, "Century Gothic", sans-serif;
+  min-width: 240px;
+  border: 1px solid black;
+  width: 18%;
+  float: left;
+  padding: 20px 10px;
+  text-align: left;
   margin: 5px;
 }
 
@@ -252,7 +304,7 @@ p.left {
 div.page-header  {
   border: 0px solid black;
   width: 100%;
-  min-width: 1050px;
+  min-width: 1300px;
   max-width: 1300px;
   font-size: 18px;
   font-weight: bold;
@@ -270,9 +322,9 @@ div.main-box {
   /*background-color:  #f9f9f9;*/
  }
 
-div#main-left-box {
+div.main-left-box {
   font-family: Georgia, "Century Gothic", sans-serif;
-  border: 1px solid black;
+  border: 0px solid black;
   width: 19%;
   float: left;
   /*background-color: #f9f9f9;*/
@@ -281,9 +333,9 @@ div#main-left-box {
   margin: 5px;
 }
 
-div#main-center-box {
+div.main-center-box {
   font-family: Georgia, "Century Gothic", sans-serif;
-  border: 1px solid black;
+  border: 0px solid black;
   /*font-size: 18px;*/
   /*font-weight: bold;*/
   /*color: #303030;*/
@@ -295,7 +347,7 @@ div#main-center-box {
   margin: 5px;
 }
 
-div#main-right-box {
+div.main-right-box {
   font-family: Georgia, "Century Gothic", sans-serif;
   border: 0px solid black;
   width: 19%;
@@ -319,3 +371,18 @@ div#main-right-box {
 /*table {
   font-size: 15px;
 }*/
+
+img {
+  -webkit-box-shadow: 10px 9px 28px -2px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 9px 28px -2px rgba(0,0,0,0.75);
+  box-shadow: 10px 9px 28px -2px rgba(0,0,0,0.75);
+  border-radius: 5px;
+}
+
+.padding-top {
+  padding-top: 10px;
+}
+
+.padding-boxscore {
+  padding-top: 25px;
+}

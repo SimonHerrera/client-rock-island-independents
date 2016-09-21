@@ -1,7 +1,9 @@
 'use strict';
 
 angular.module('riiApp')
-  .controller('YearViewCtrl', function(apiUrl, $http, $routeParams) {
+  .controller('YearViewCtrl', function(apiUrl, $http, $routeParams, $anchorScroll) {
+
+    $anchorScroll.yOffset=200
 
     const yearView = this;
     yearView.thisYearsGames = null;
@@ -13,7 +15,8 @@ angular.module('riiApp')
   //Get Player
 
 
-    yearView.heading = 'Season Schedule'
+    yearView.scheduleHeading = 'Season Schedule'
+    yearView.rosterHeading = 'Roster'
 
     console.log("selectd year", $routeParams.selectedYear);
 
@@ -26,10 +29,10 @@ angular.module('riiApp')
     $http.get (`${apiUrl}/years/${$routeParams.selectedYear}/`)
     .then(res => {
       yearView.year = res.data;
-      console.log(yearView.year);
     }).then(() =>
       $http.get (apiUrl+'/games/').then(res => {
         yearView.allGames = res.data
+      console.log("all games", yearView.allGames);
       })
     ).then(
       () => {
@@ -38,7 +41,7 @@ angular.module('riiApp')
           var year = date.getFullYear()
           return year === parseInt(yearView.year.year);
         });
-        console.log("yearview", yearView.thisYearsGames );
+        console.log("this years games", yearView.thisYearsGames );
       }
     ).then(() =>
       $http.get (apiUrl+'/players/').then(res => {
@@ -61,18 +64,22 @@ angular.module('riiApp')
       });
     })
 
+    // Bring in all games to Show Game View
     yearView.selectGame = game => {
       yearView.yearSummary = false;
       yearView.individualGameView = true;
       yearView.individualPlayerView = false;
-      yearView.gameSummary = game.gameSummary
+      yearView.game = game
+      $anchorScroll('top')
     }
 
+    // Bring in all players to Show Player View
     yearView.selectPlayer = player => {
       yearView.yearSummary = false;
       yearView.individualGameView = false;
       yearView.individualPlayerView = true;
       yearView.player = player
+      $anchorScroll('top')
     }
 
 
