@@ -23,7 +23,7 @@ angular.module('riiApp')
       for (let i = 0; i < opponents.teamsPlayed.length; i++) {
           // console.log("opp", opponents.teamsPlayed[i]);
         for (let j = 0; j < opponents.teamsPlayed[i].games.length; j++) {
-          console.log("game", opponents.teamsPlayed[i].games[j]);
+          // console.log("game", opponents.teamsPlayed[i].games[j]);
           if (opponents.teamsPlayed[i].games[j].result === "W") {
             wins ++
           } else if (opponents.teamsPlayed[i].games[j].result === "L") {

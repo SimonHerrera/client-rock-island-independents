@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('riiApp')
-  .controller('PlayersCtrl', function(apiUrl, $http) {
+  .controller('PlayersCtrl', function(apiUrl, $http, $anchorScroll) {
+
+    $anchorScroll.yOffset=200
 
     const players = this
-
     players.welcome = 'Rock Island Players'
     players.heading = 'Player Name'
     players.intialView = true;
@@ -19,6 +20,7 @@ angular.module('riiApp')
       players.intialView = false;
       players.individualPlayerView = true;
       players.player = player
+      $anchorScroll('top')
     }
 
   });
