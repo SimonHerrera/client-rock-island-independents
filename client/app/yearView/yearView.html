@@ -40,7 +40,7 @@
         <!-- <div ng-show="yearView.individualGameView"><h2>Game Summary</h2> {{  yearView.gameSummary }}</div> -->
 
         <div ng-show="yearView.individualGameView" class="row">
-          <div class="col-md-5"><h2>Game Summary</h2>
+          <div class="col-md-5"><h2>Game</h2>
             <p>Date: {{ yearView.game.date }}</p>
             <p>Attendance: {{ yearView.game.attendance }}</p>
             <p>Location: {{ yearView.game.locationId.venueName }}</p>
@@ -83,18 +83,9 @@
         </div>
         <div ng-show="yearView.individualGameView" class="row">
           <div class="col-md-12">
-            <p>Game Summary: {{ yearView.game.gameSummary }}</p>
+            <h4>Game Summary: </h4><p>{{ yearView.game.gameSummary }}</p>
           </div>
         </div>
-
-
-
-
-
-
-
-
-
 
         <!-- NG Show Player View -->
         <div  ng-show="yearView.individualPlayerView" class="row">
@@ -106,8 +97,8 @@
                     <p>College: {{ yearView.player.college }}</p>
           </div>
           <div class="col-md-6 padding-boxscore">
-        <img ng-src="{{ yearView.player.image }}">
-                    <p class="padding-top">Photo: {{ yearView.player.imageInfo }}</p>
+            <img ng-src="{{ yearView.player.image }}">
+            <p class="padding-top">Photo: {{ yearView.player.imageInfo }}</p>
           </div>
         </div>
         <div ng-show="yearView.individualPlayerView" class="row">

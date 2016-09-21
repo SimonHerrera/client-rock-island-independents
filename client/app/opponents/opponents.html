@@ -1,14 +1,17 @@
 <div>
   <section>
     <h1 class="center">{{ opponents.welcome }}</h1>
-    <!-- <h1>{{ opponents.welcome }}</h1> -->
-<!--
-    <p ng-repeat='opponent in opponents.teamsPlayed'> <a href ="{{ opponent.url }}"> {{ opponent.name }} </a>
-    </p> -->
+
+
 
       <div class="col-lg-10 col-md-10 col-sm-10"> <!-- ng-show? -->
         <div>
           <h1>{{ opponents.heading }}</h1>
+            <form class="navbar-form navbar-center">
+              <div class="form-group">Search Teams:
+                <input type="text" class="form-control" placeholder="Search" ng-model="userSearch">
+              </div>
+            </form>
             <table class="table table-striped table-hover table-condensed">
               <thead>
                 <tr>
@@ -16,14 +19,18 @@
                   <th>Wins</th>
                   <th>Losses</th>
                   <th>Ties</th>
+                  <th>Points For</th>
+                  <th>Points Against</th>
                 </tr>
               </thead>
               <tbody>
-                <tr ng-repeat="opponent in opponents.teamsPlayed | orderBy: 'name'">
+                <tr ng-repeat="opponent in opponents.teamsPlayed | orderBy: 'name' | filter: userSearch">
                   <td>{{ opponent.name }}</td>
                   <td>{{ opponent.wins }}</td>
                   <td>{{ opponent.losses }}</td>
                   <td>{{ opponent.ties }}</td>
+                  <td>{{ opponent.pointsFor }}</td>
+                  <td>{{ opponent.pointsAgainst }}</td>
                   <!-- <td><button ng-click="deleteAlbum(album)">Delete</button></td> -->
                 </tr>
               </tbody>
