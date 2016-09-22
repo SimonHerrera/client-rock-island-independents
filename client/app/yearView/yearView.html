@@ -1,4 +1,5 @@
 <div>
+
   <!-- Year View heading info -->
   <section>
     <div class="year-head-box">
@@ -37,6 +38,7 @@
     <section>
       <div class="year-center-box">
         <div ng-show="yearView.yearSummary"><h2>Year Summary</h2> {{  yearView.year.yearSummary }}</div>
+        <div ng-show="yearView.yearSummary" class="img-center"><img ng-src="{{ yearView.year.image }}"></div>
         <!-- <div ng-show="yearView.individualGameView"><h2>Game Summary</h2> {{  yearView.gameSummary }}</div> -->
 
         <div ng-show="yearView.individualGameView" class="row">
