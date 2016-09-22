@@ -386,7 +386,7 @@ box-shadow: 10px 10px 20px 0px rgba(194,194,194,1);
 .spinner {
   width: 80px;
   height: 80px;
-  border: 2px solid #f3f3f3;
+  border: 3px solid #f3f3f3;
   border-top: 3px solid #f25a41;
   border-radius: 100%;
 
@@ -396,7 +396,7 @@ box-shadow: 10px 10px 20px 0px rgba(194,194,194,1);
   left: 0;
   right: 0;*/
   margin: auto;
-  animation: spin 3s infinite linear
+  animation: spin 1s infinite linear
 }
 
 @keyframes spin {
