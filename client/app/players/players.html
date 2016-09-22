@@ -18,61 +18,35 @@
               </thead>
               <tbody>
                 <tr ng-repeat="player in players.riiPlayers | orderBy: 'lastName' | filter: userSearch">
-                  <!-- <td><a href ="{{ player.url }}">{{ player.firstName }}  {{ player.lastName }}</a><img ng-src="{{ player.image }}"></td> -->
-                  <!-- <td><a href ="{{ player.url }}">{{ player.firstName }}  {{ player.lastName }}</a></td> -->
                   <td><a href ="" ng-click="players.selectPlayer(player)">{{ player.firstName }}  {{ player.lastName }}</a></td>
-
                 </tr>
               </tbody>
             </table>
         </div>
       </div>
+
+
     <!-- Player Bio Section -->
-
-    <!-- <section ng-show="players.individualPlayerView" id="mainPlayerView" class="row"> -->
-
     <section ng-show="players.individualPlayerView" class="col-lg-8 col-md-8 col-sm-8">
       <div class="row">
-
-
-          <div class="col-sm-5"><h2>Player Bio</h2>
-            <h3> {{ players.player.firstName }} {{ players.player.nickName }} {{ players.player.lastName }}</h3>
-                    <p>Position: {{ players.player.position }}</p>
-                    <p>Birth Date: {{ players.player.birthDate }}</p>
-                    <p>Birth State: {{ players.player.birthState }}</p>
-                    <p>College: {{ players.player.college }}</p>
+        <div class="col-sm-5"><h2>Player Bio</h2>
+          <h3> {{ players.player.firstName }} {{ players.player.nickName }} {{ players.player.lastName }}
+          </h3>
+          <p>Position: {{ players.player.position }}</p>
+          <p>Birth Date: {{ players.player.birthDate }}</p>
+          <p>Birth State: {{ players.player.birthState }}</p>
+          <p>College: {{ players.player.college }}</p>
+        </div>
+        <div class="col-md-7 padding-boxscore">
+          <img ng-src="{{ players.player.image }}">
+          <p class="padding-top">Photo: {{ players.player.imageInfo }}</p>
+        </div>
+        <div ng-show="players.individualPlayerView" class="row">
+          <div class="col-sm-10">
+            <p>About: {{ players.player.playerBio }}</p>
           </div>
-          <div class="col-md-7 padding-boxscore">
-            <img ng-src="{{ players.player.image }}">
-            <p class="padding-top">Photo: {{ players.player.imageInfo }}</p>
-          </div>
-          <div ng-show="players.individualPlayerView" class="row">
-            <div class="col-sm-10">
-              <p>About: {{ players.player.playerBio }}</p>
-            </div>
-          </div>
+        </div>
       </div>
     </section>
-
-
-
-
-
-
-
-      <!-- why does this intialView not show anything -->
-<!--       <div ng-show="players.individualPlayerView"> {{  players.player.weight }}</div>
-      <div ng-show="players.individualPlayerView"> {{  players.player.playerBio }} <img ng-src="{{ players.player.image }}"></div> -->
-
-
   </section>
-  <!-- </section> -->
 </div>
-<!-- Code that can bring in images</div>
-    <div ng-init="myVar = 'http://localhost:8000/media/player_images/player_XgeBeru.jpg'">
-      <img ng-src="{{myVar}}">
-    </div> -->
- <!--  <div>
-    <img ng-src="{{ players.riiPlayers.image }}">
-    <img ng-src='http://localhost:8000/media/player_images/player_XgeBeru.jpg'">
-  </div> -->

@@ -7,3 +7,4 @@ angular.module('riiApp', ['ngRoute'])
     $httpProvider.defaults.xsrfCookieName = 'csrftoken'; // adds header
     $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
   });
+
