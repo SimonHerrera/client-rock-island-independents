@@ -15,7 +15,8 @@
     <section>
       <div class="year-left-box">
         <h3 class="center">{{ yearView.year.year }} {{ yearView.scheduleHeading }}</h3>
-          <table class="cellPad">
+          <div class="spinner" ng-show="yearView.loading"></div>
+          <table class="cellPad" ng-hide="yearView.loading">
             <thead>
               <tr>
                 <th>Wk</th>
@@ -115,7 +116,8 @@
     <section>
       <div class="year-right-box">
         <h3 class="center">{{ yearView.year.year }} {{ yearView.rosterHeading }}</h3>
-          <div>
+        <div class="spinner" ng-show="yearView.loading"></div>
+          <div  ng-hide="yearView.loading">
             <table>
               <thead>
                 <tr>

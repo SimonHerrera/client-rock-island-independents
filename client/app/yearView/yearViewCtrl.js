@@ -18,6 +18,8 @@ angular.module('riiApp')
     yearView.scheduleHeading = 'Season Schedule'
     yearView.rosterHeading = 'Roster'
 
+    yearView.loading = true;
+
     console.log("selectd year", $routeParams.selectedYear);
 
     //Get Years
@@ -57,6 +59,7 @@ angular.module('riiApp')
             yearView.thisYearsPlayers.push(player);
           }
         });
+        yearView.loading = false;
 
         console.log("yearView.thisYearsPlayers", yearView.thisYearsPlayers)
 

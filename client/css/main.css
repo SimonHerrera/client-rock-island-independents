@@ -382,7 +382,7 @@ box-shadow: 10px 10px 20px 0px rgba(194,194,194,1);
 .about {
   padding-top: 65px
 }
-/*
+
 .spinner {
   width: 80px;
   height: 80px;
@@ -390,13 +390,13 @@ box-shadow: 10px 10px 20px 0px rgba(194,194,194,1);
   border-top: 3px solid #f25a41;
   border-radius: 100%;
 
-  position: absolute;
+  /*position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
+  right: 0;*/
   margin: auto;
-  animation: spin 10s linear
+  animation: spin 3s infinite linear
 }
 
 @keyframes spin {
@@ -405,4 +405,4 @@ box-shadow: 10px 10px 20px 0px rgba(194,194,194,1);
   } to {
     transform: rotate(360deg);
   }
-}*/
+}
