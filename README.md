@@ -1,6 +1,6 @@
 # Rock Island Independents Historical Site
 
-Deployed site -> (https://104.236.6.142/#/)
+Deployed site -> (104.236.6.142/#/)
 
 I was just like every other sports fan in the Quad Cities - I knew that we used to have a football team here but that was about it.
 The team was the Rock Island Independents and with the help of the PFRA (Professional Football Researchers Association) and specifically Bob Carroll I discovered that not only were they a part of the NFL, they were one of the charter members, I needed to know more.
