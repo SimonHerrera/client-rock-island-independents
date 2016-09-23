@@ -11,30 +11,24 @@ angular.module('riiApp')
     yearView.yearSummary = true;
     yearView.individualGameView = false
     yearView.individualPlayerView = false
-
-  //Get Player
-
-
     yearView.scheduleHeading = 'Season Schedule'
     yearView.rosterHeading = 'Roster'
 
     yearView.loading = true;
 
-    console.log("selectd year", $routeParams.selectedYear);
 
     //Get Years
     $http.get (apiUrl+'/years/').then(res => {
-      // console.log("res", res);
       yearView.allYears = res.data
     })
 
+    //Select Year and get games and specific game - get players for that year
     $http.get (`${apiUrl}/years/${$routeParams.selectedYear}/`)
     .then(res => {
       yearView.year = res.data;
     }).then(() =>
       $http.get (apiUrl+'/games/').then(res => {
         yearView.allGames = res.data
-      console.log("all games", yearView.allGames);
       })
     ).then(
       () => {
@@ -43,25 +37,20 @@ angular.module('riiApp')
           var year = date.getFullYear()
           return year === parseInt(yearView.year.year);
         });
-        console.log("this years games", yearView.thisYearsGames );
       }
     ).then(() =>
       $http.get (apiUrl+'/players/').then(res => {
-        // console.log("res", res);
         yearView.allPlayers = res.data
       })
     ).then(
     () => {
       yearView.allPlayers.forEach(player => {
         player.season.forEach(s => {
-          console.log(s, yearView.year.url);
           if (s === yearView.year.url) {
             yearView.thisYearsPlayers.push(player);
           }
         });
         yearView.loading = false;
-
-        console.log("yearView.thisYearsPlayers", yearView.thisYearsPlayers)
 
 
       });
