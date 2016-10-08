@@ -185,7 +185,6 @@ div.year-head-right-box {
 
 div.year-box {
   width: 100%;
-  min-width: 1300px;
   margin: auto;
  }
 
@@ -198,7 +197,7 @@ div.year-left-box {
   -moz-box-shadow: 10px 9px 28px -2px rgba(0,0,0,0.75);
   box-shadow: 10px 9px 28px -2px rgba(0,0,0,0.75);
   border-radius: 5px;
-  height: 580px;
+  height: 650px;
   width: 23%;
   float: left;
   padding: 20px 10px;
@@ -216,7 +215,7 @@ div.year-center-box {
   -moz-box-shadow: 10px 9px 28px -2px rgba(0,0,0,0.75);
   box-shadow: 10px 9px 28px -2px rgba(0,0,0,0.75);
   border-radius: 5px;
-  height: 580px;
+  height: 650px;
   width: 50%;
   float: left;
   padding: 15px 20px 20px 20px;
@@ -233,7 +232,7 @@ div.year-right-box {
   -moz-box-shadow: 10px 9px 28px -2px rgba(0,0,0,0.75);
   box-shadow: 10px 9px 28px -2px rgba(0,0,0,0.75);
   border-radius: 5px;
-  height: 580px;
+  height: 650px;
   width: 18%;
   float: left;
   padding: 20px 10px;
